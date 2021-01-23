@@ -28,8 +28,11 @@ function HomePage() {
   return (
     <div className="HomePage">
       In a pickle
-      <div><button><Link to={getRoom()}>Create Room</Link></button></div>
-      <div>
+      <div class="fpbutton">
+        <button><Link to={getRoom()}>Create Room</Link></button>
+      </div>
+
+      <div class="fpbutton">
         <input placeholder="Enter Room Code" type="text" value={roomCode} maxLength="4" onChange={handleRoomInput} ></input>
         <button><Link to={roomCode}>Join Room</Link></button>
       </div>

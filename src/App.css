@@ -1,0 +1,15 @@
+.fpbutton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin:15px;
+}
+
+.HomePage {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
