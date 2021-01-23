@@ -25,7 +25,7 @@ function RoomPage() {
     return (
         <div className="RoomPage">
             Welcome to le Room {id}
-            <button onClick={getRestaurants()}>le Test</button>
+            <button onClick={getRestaurants()}>Debug</button>
         </div>
     );
 }
