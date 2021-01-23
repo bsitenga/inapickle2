@@ -6,13 +6,17 @@ import {
     Link,
     useParams
   } from "react-router-dom";
-//const axios = require('axios');
+import axios from 'axios';
 
 function RoomPage() {
     let { id } = useParams();
-    /*
+
     const getRestaurants = (lat, long, cat) => {
-        axios.get('https://api.yelp.com/v3/businesses/search?term=restaurants&latitude='+lat+'&longitude='+long+'&categories='+cat+'&Authorization=RiWn0-rteRq8DqYF-H_VYWdP3qvPffx2HuU6M149dhVAsYKnnBuopPeFk_1vgVkyN5q2mSRQ7v-hLFJ34O9U0AeVF0wKW12KR5rAHdZ_hk_JxfkGMA9CLLntoXEMYHYx')
+        axios.get('https://api.yelp.com/v3/businesses/search?term=restaurants&latitude='+lat+'&longitude='+long+'&categories='+cat, {
+            headers: {
+                'Authorization': 'Bearer RiWn0-rteRq8DqYF-H_VYWdP3qvPffx2HuU6M149dhVAsYKnnBuopPeFk_1vgVkyN5q2mSRQ7v-hLFJ34O9U0AeVF0wKW12KR5rAHdZ_hk_JxfkGMA9CLLntoXEMYHYx'
+            }
+        })
         .then(response => {
             console.log(response.data.url);
             console.log(response.data.explanation);
@@ -21,7 +25,7 @@ function RoomPage() {
             console.log(error);
           });
         }
-    */
+
     return (
         <div className="RoomPage">
             Welcome to le Room {id}
@@ -44,6 +48,7 @@ function RoomPage() {
 
             <div>
                 <button>FIND PICKLE</button>
+                <button onClick={getRestaurants()}>le Test</button>
             </div>
             
         </div>
