@@ -31,6 +31,21 @@ function RoomPage() {
                 <span class="code"></span>
             </div>
 
+            <div class="nameBox">
+                <span class="client1"></span>
+                <span class="client2"></span>
+            </div>
+
+            <div class="moneySlider">
+                $
+                <input type="range" min="1" max="10" value="50" class="slider" id="range"></input>
+                $$$$$
+            </div>
+
+            <div>
+                <button>FIND PICKLE</button>
+            </div>
+            
         </div>
     );
 }
