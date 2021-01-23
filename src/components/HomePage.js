@@ -27,7 +27,8 @@ function HomePage() {
 
   return (
     <div className="HomePage">
-      In a pickle
+      <h1>In a Pickle</h1>
+      <input placeholder="Enter Your Name" type="text" maxLength="12" ></input>
       <div class="fpbutton">
         <button><Link to={getRoom()}>Create Room</Link></button>
       </div>
