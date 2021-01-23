@@ -12,7 +12,7 @@ function RoomPage() {
     let { id } = useParams();
 
     const getRestaurants = (lat, long, cat) => {
-        axios.get('https://api.yelp.com/v3/businesses/search?term=restaurants&latitude='+lat+'&longitude='+long+'&categories='+cat)
+        axios.get('https://api.yelp.com/v3/businesses/search?term=restaurants&latitude='+lat+'&longitude='+long+'&categories='+cat+'&Authorization=RiWn0-rteRq8DqYF-H_VYWdP3qvPffx2HuU6M149dhVAsYKnnBuopPeFk_1vgVkyN5q2mSRQ7v-hLFJ34O9U0AeVF0wKW12KR5rAHdZ_hk_JxfkGMA9CLLntoXEMYHYx')
         .then(response => {
             console.log(response.data.url);
             console.log(response.data.explanation);
