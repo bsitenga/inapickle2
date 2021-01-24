@@ -11,21 +11,56 @@ import axios from 'axios';
 function RoomPage() {
     let { id } = useParams();
 
-    const getRestaurants = (address, cat) => {
-        axios.get('https://api.yelp.com/v3/businesses/search?term=restaurants&location='+address+'&categories='+cat, {
+    const getRestaurants = (latitude, longitude, price, cat) => {
+
+        let budget = ""; 
+        for(let x = 0; x < price.length; x++) {
+            budget.concat(price[x]);
+        }
+
+        axios.get('https://cors-anywhere.herokuapp.com/' + 'https://api.yelp.com/v3/businesses/search?term=restaurants&longitude='+longitude+'&latitude='+latitude+'&radius='+radius+'&price='+price+'&categories='+cat, {
             headers: {
-                'Authorization': 'Bearer RiWn0-rteRq8DqYF-H_VYWdP3qvPffx2HuU6M149dhVAsYKnnBuopPeFk_1vgVkyN5q2mSRQ7v-hLFJ34O9U0AeVF0wKW12KR5rAHdZ_hk_JxfkGMA9CLLntoXEMYHYx'
+                'Authorization': 'Bearer RiWn0-rteRq8DqYF-H_VYWdP3qvPffx2HuU6M149dhVAsYKnnBuopPeFk_1vgVkyN5q2mSRQ7v-hLFJ34O9U0AeVF0wKW12KR5rAHdZ_hk_JxfkGMA9CLLntoXEMYHYx',
+                "Access-Control-Allow-Origin":"*",
             }
         })
         .then(response => {
-            console.log(response.data.url);
-            console.log(response.data.explanation);
+            console.log(response);
+            let r = response.data.businesses;
+            let data = [];
+            for(let i = 0; i < r.length; i++) {
+                data.push( {
+                    name: r[i].name, distance: r[i].distance, img: r[i].image_url
+            })
+            }
+            data.sort(function(a,b){return a.distance - b.distance});
+            console.log(data);
           })
+
           .catch(error => {
             console.log(error);
           });
-          
+
         }
+    
+        function findLoc() {
+            
+            function success(position) {
+              const latitude  = position.coords.latitude;
+              const longitude = position.coords.longitude;
+              console.log(latitude);
+              console.log(longitude);
+            }
+          
+            function error() {
+            }
+          
+            if(!navigator.geolocation) {
+            } else {
+              navigator.geolocation.getCurrentPosition(success, error);
+            }
+          
+          }
 
     return (
         <div className="RoomPage">
@@ -52,8 +87,8 @@ function RoomPage() {
             </div>
 
             <div>
-                <button>FIND PICKLE</button>
-                <button onClick={getRestaurants("33 Harry Agganis Way, Boston, MA 02215", "french")}>le Test</button>
+                <button onClick={() => geoFindMe()}>WHERE</button>
+                <button onClick={() => getRestaurants("33 Harry Agganis Way, Boston, MA 02215", 500, [1,2], "restaurant")}>YUM</button>
             </div>
 
         </div>
