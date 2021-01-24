@@ -35,7 +35,7 @@ function HomePage() {
 
       <div class="fpbutton">
         <input placeholder="Enter Room Code" type="text" value={roomCode} maxLength="4" onChange={handleRoomInput} ></input>
-        <button><Link to={roomCode}>Join Room</Link></button>
+        <button id="searchbutton"><Link to={roomCode}>Join Room</Link></button>
       </div>
 
     </div>
