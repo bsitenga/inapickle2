@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-.fpbutton {
+.fpbutton, .clientNameFrame {
     display: flex;
     flex-direction: row;
     justify-content: center;
-
     margin: 15px;
 }
 
@@ -20,7 +19,7 @@
     margin: 15px;
 }
 
-body {
+body, button {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -30,7 +29,7 @@ body {
   background-color: #718756;
   color: white;
   font-family: Montserrat;
-  font-size: 28px;
+  font-size: 30px;
 }
 
 button {
@@ -40,10 +39,10 @@ button {
   left: 40px;
   top: 233px;
   border-radius: 10px;
-  color: white;
-  font-size: 30px;
   border-style: none;
 }
+
+
 
 a {
   color: inherit;
@@ -56,7 +55,7 @@ a {
   height: 57px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 #codeinput {
@@ -65,14 +64,15 @@ a {
   border-bottom-left-radius: 10px;
   font-size: 18px;
   text-indent: 10px;
+  margin-right: -10%;
+}
+
+::placeholder {
+  font-family: Montserrat;
 }
 
 .clientNameFrame {
-  width: 291px;
-  height: 62px;
-  left: 40px;
-  top: 233px;
-  margin-bottom: 1vw;
+  padding: 3%;
   background-color: #9EC072;
   border-radius: 10px;
 }
@@ -82,32 +82,24 @@ a {
 }
 
 #client1, #client2 {
-  padding-top: 1vw;
-  text-align: center;
-  word-wrap: break-word;
   font-size: 25px;
+  text-align: center;
 }
 
 #title {
-  margin-top: 70px;
+  margin-top: 40px;
 }
 
 .enterName {
   border: none;
-  margin-top: 100px;
-  margin-bottom: 150px;
-  border-radius: 25px;
+  margin-top: 40%;
+  margin-bottom: 5%;
+  border-radius: 10px;
   text-align: center;
   color: black;
   height: 50px;
-  width: 190px;
+  width: 60%;
   font-size: 18px;
-}
-
-.roomButtons {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
 }
 
 .testButton {
@@ -120,4 +112,15 @@ a {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
+}
+
+#logo {
+  height: 120%;
+  width: 120%;
+  margin-top: -25%;
+  margin-bottom: -25%;
+}
+
+.codeBox {
+  margin: -10%;
 }
