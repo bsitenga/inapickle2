@@ -60,14 +60,17 @@ function RoomPage() {
                 let data = [];
                 for (let i = 0; i < r.length; i++) {
                     data.push({
-                        name: r[i].name, distance: r[i].distance, img: r[i].image_url
+                        name: r[i].name, distance: (r[i].distance/1600).toFixed(2), img: r[i].image_url
                     })
                 }
                 data.sort(function (a, b) { return a.distance - b.distance });
+                console.log(data);
                 axios.post('https://radiant-savannah-04373.herokuapp.com/restaurants', {
                     roomCode: id,
                     restaurants: data
                 })
+                .then(response => console.log(response))
+                .catch(error => console.log(error))
             })
 
             .catch(error => {
