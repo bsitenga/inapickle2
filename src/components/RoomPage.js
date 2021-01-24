@@ -29,16 +29,20 @@ function RoomPage() {
 
     return (
         <div className="RoomPage">
-            Welcome to le Room {id}
+            Welcome to le Room
             <h1> Your Room </h1>
             <div class="codeBox">
-                <h3>Code: </h3>
+                <h3>Code: {id} </h3>
                 <span class="code"></span>
             </div>
 
             <div class="nameBox">
-                <span class="client1"></span>
-                <span class="client2"></span>
+                <div class="nameFrame">
+                  <div id="client1">Heinz Doofenshmirtz</div>
+                </div>
+                <div class="nameFrame">
+                  <div id="client2">Perry T. Platypus</div>
+                </div>
             </div>
 
             <div class="moneySlider">
@@ -51,7 +55,7 @@ function RoomPage() {
                 <button>FIND PICKLE</button>
                 <button onClick={getRestaurants("33 Harry Agganis Way, Boston, MA 02215", "french")}>le Test</button>
             </div>
-            
+
         </div>
     );
 }
