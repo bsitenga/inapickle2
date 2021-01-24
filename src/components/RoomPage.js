@@ -21,7 +21,6 @@ function RoomPage() {
             setInterval(() => {
                 axios.get("https://radiant-savannah-04373.herokuapp.com/rooms")
                     .then(res => {
-                        console.log(res);
                         let currRoom;
                         for (let i = 0; i < res.data.length; i++) {
                             if (res.data[i].roomCode == id) {
@@ -87,6 +86,7 @@ function RoomPage() {
         }
 
         function error() {
+            console.log("geolocation error");
         }
 
         if (!navigator.geolocation) {
