@@ -45,6 +45,7 @@ function insertMatches(name, date, partner) {
             </div>
 
         </div>
+        <button onClick={getRestaurants()}>le Test</button>
     );
 }
 

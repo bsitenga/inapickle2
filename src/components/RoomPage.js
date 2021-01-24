@@ -36,7 +36,7 @@ function RoomPage() {
             </div>
 
             <div class="nameBox">
-                <div class="nameFrame">>
+                <div class="nameFrame">
                   <div id="client1">Heinz Doofenshmirtz</div>
                 </div>
                 <div class="nameFrame">
@@ -52,7 +52,6 @@ function RoomPage() {
 
             <div>
                 <button>FIND PICKLE</button>
-                <button onClick={getRestaurants()}>le Test</button>
             </div>
 
         </div>
