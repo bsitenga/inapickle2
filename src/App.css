@@ -105,4 +105,10 @@ a {
 .testButton {
   margin-top: 100px;
   margin-bottom: 50px;
+
+.checkboxes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
 }
