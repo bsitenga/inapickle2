@@ -28,6 +28,7 @@ function HomePage() {
   return (
     <div className="HomePage">
       <h1 id="title">In a Pickle</h1>
+      <img src="pickle_logo.png" alt="In a Pickle Logo"></img>
       <input placeholder="Enter Your Name" type="text" maxLength="12" class="enterName"></input>
 
       <div class="fpbutton">
