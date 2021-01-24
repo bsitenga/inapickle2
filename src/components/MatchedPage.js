@@ -49,15 +49,7 @@ function MatchedPage() {
   return (
     <div className="MatchedPage">
       <h1 id="title">In a Pickle, you and ___ chose:</h1>
-      <div class="placePreview">
-      </div>
-      <div class="fpbutton">
-        <div id="address">123 Wallaby Way Sydney, Huh, Place 22202</div>
-        <button id="copyToClipboard"></button>
-      </div>
-      <div class="fpbutton">
-        <button id="backHome">Back to Home</button>
-      </div>
+
     </div>
   );
 }
