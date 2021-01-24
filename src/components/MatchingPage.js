@@ -40,7 +40,17 @@ function MatchingPage() {
     })
 
     const handleLike = () => {
-        // axios.post("")
+        axios.post("https://radiant-savannah-04373.herokuapp.com/preferences", {
+            roomCode: id,
+            restaurantName: restaurants[index].name,
+            userType: "creator"
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
         setIndex(index + 1);
     }
 
