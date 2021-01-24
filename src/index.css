@@ -33,7 +33,7 @@ a {
   text-decoration: none;
 }
 
-#searchbutton {
+#joinroombutton {
   border-radius: 0px;
   width: 108px;
   height: 57px;
@@ -41,12 +41,12 @@ a {
   border-bottom-right-radius: 10px;
 }
 
-input {
+#codeinput {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
-.nameFrame {
+.clientNameFrame {
   width: 291px;
   height: 62px;
   left: 40px;
@@ -58,7 +58,7 @@ input {
 }
 
 #range {
- color: grey;
+  background-color: grey
 }
 
 #client1, #client2 {
