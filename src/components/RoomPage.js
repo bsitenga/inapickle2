@@ -78,9 +78,18 @@ function RoomPage() {
                 </div>
             </div>
             <div class="moneySlider">
-                $
-                <input type="range" min="1" max="10" value="50" class="slider" id="range"></input>
-                $$$$$
+            <div class="checkboxes">
+                    $  
+                    <input type="checkbox"></input>
+                    $$
+                    <input type="checkbox"></input>
+            </div>
+            <div class="checkboxes">
+                    $$$
+                    <input type="checkbox"></input>
+                    $$$$
+                    <input type="checkbox"></input>
+            </div>
             </div>
 
             <div class="roomButtons">
