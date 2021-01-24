@@ -12,7 +12,9 @@ function RoomPage() {
 
     return (
         <div className="RoomPage">
-            Welcome to le Room {id}
+            <h1>Your Room</h1>
+            <h2>code: {id}</h2>
+            
         </div>
     );
 }
