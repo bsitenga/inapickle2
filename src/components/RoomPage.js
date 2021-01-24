@@ -96,7 +96,7 @@ function RoomPage() {
                     <div id="client1">Heinz Doofenshmirtz</div>
                 </div>
                 <div class="clientNameFrame">
-                    <div id="client2">Perry T. Platypus</div>
+                    <div id="client2">Waiting for a friend...</div>
                 </div>
             </div>
             <div class="moneySlider">
@@ -114,10 +114,13 @@ function RoomPage() {
                 </div>
             </div>
 
-            <div class="roomButtons">
-                <button class="testButton">FIND PICKLE</button>
-                <button onClick={() => findLoc()}>WHERE</button>
-                <button onClick={() => getRestaurants(37.786882, -122.399972, [1, 2], "restaurant")}>YUM</button>
+            <div>
+              <div class="fpbutton">
+                <button onClick={() => findLoc()}>Find Me</button>
+              </div>
+              <div class="fpbutton">
+                <button onClick={() => getRestaurants(37.786882, -122.399972, [1, 2], "restaurant")}>Start Matching</button>
+              </div>
             </div>
 
         </div>
