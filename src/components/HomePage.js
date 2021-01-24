@@ -46,6 +46,21 @@ function HomePage() {
     })
   }
 
+  const joinRoom = () => {
+    console.log("test");
+    axios.post("https://radiant-savannah-04373.herokuapp.com/roomjoiner", {
+      roomCode: roomCode,
+      joiner: name
+    })
+    .then(function(response) {
+      console.log(response);
+    })
+    .catch(function(error) {
+      console.log(error);
+    })
+    console.log("test");
+  }
+
   return (
     <div className="HomePage">
       <h1 id="title">In a Pickle</h1>
@@ -54,7 +69,7 @@ function HomePage() {
 
       <div class="fpbutton">
         <input placeholder="Enter Room Code" type="text" id="codeinput" value={roomCode} maxLength="4" onChange={handleRoomInput} ></input>
-        <button id="joinroombutton"><Link to={roomCode}>Join Room</Link></button>
+        <button id="joinroombutton" onClick={() => joinRoom()}><Link to={roomCode}>Join Room</Link></button>
       </div>
 
       <div class="fpbutton">

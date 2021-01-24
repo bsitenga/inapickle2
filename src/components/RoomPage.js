@@ -17,21 +17,28 @@ function RoomPage() {
     useEffect(() => {
         try {
             setInterval(() => {
-                axios.get("https://radiant-savannah-04373.herokuapp.com/rooms", {
-                    params: { roomCode: id }
-                })
-                    .then(function (response) {
-                        console.log(response);
-                        setCreatorName(response.data)
+                axios.get("https://radiant-savannah-04373.herokuapp.com/rooms")
+                    .then(res => {
+                        console.log(res);
+                        let currRoom;
+                        for (let i = 0; i < res.data.length; i++) {
+                            if (res.data[i].roomCode == id) {
+                                currRoom = res.data[i];
+                            }
+                        }
+                        setCreatorName(currRoom.creator);
+                        if (currRoom.joiner != "NOJOIN") {
+                            setJoinerName(currRoom.joiner);
+                        }
                     })
                     .catch(function (error) {
                         console.log(error);
                     })
-            }, 5000);
+            }, 4000);
         } catch (e) {
             console.log(e);
         }
-    }, [])
+    }, [creatorName])
 
     const getRestaurants = (latitude, longitude, price, cat) => {
 
@@ -93,10 +100,10 @@ function RoomPage() {
             </div>
             <div class="nameBox">
                 <div class="clientNameFrame">
-                    <div id="client1">Heinz Doofenshmirtz</div>
+                    <div id="client1">{creatorName}</div>
                 </div>
                 <div class="clientNameFrame">
-                    <div id="client2">Perry T. Platypus</div>
+                    <div id="client2">{joinerName}</div>
                 </div>
             </div>
             <div class="moneySlider">
