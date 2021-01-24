@@ -29,13 +29,14 @@ function HomePage() {
     <div className="HomePage">
       <h1 id="title">In a Pickle</h1>
       <input placeholder="Enter Your Name" type="text" maxLength="12" class="enterName"></input>
-      <div class="fpbutton">
-        <button><Link to={getRoom()}>Create Room</Link></button>
-      </div>
 
       <div class="fpbutton">
         <input placeholder="Enter Room Code" type="text" id="codeinput" value={roomCode} maxLength="4" onChange={handleRoomInput} ></input>
         <button id="joinroombutton"><Link to={roomCode}>Join Room</Link></button>
+      </div>
+
+      <div class="fpbutton">
+        <button><Link to={getRoom()}>Create Room</Link></button>
       </div>
 
     </div>

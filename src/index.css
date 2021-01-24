@@ -39,11 +39,15 @@ a {
   height: 57px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  font-size: 22px;
 }
 
 #codeinput {
+  border: none;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  font-size: 18px;
+  text-indent: 10px;
 }
 
 .clientNameFrame {
@@ -73,5 +77,13 @@ a {
 }
 
 .enterName {
-  
+  border: none;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  border-radius: 25px;
+  text-align: center;
+  color: black;
+  height: 50px;
+  width: 190px;
+  font-size: 18px;
 }
