@@ -49,7 +49,7 @@ function HomePage() {
   return (
     <div className="HomePage">
       <h1 id="title">In a Pickle</h1>
-      <img src="pickle_logo.png" alt="In a Pickle Logo"></img>
+      <img src="inapickle.png" alt="In a Pickle Logo"></img>
       <input placeholder="Name" type="text" maxLength="20" onChange={handleNameInput} class="enterName" value={name}></input>
 
       <div class="fpbutton">
