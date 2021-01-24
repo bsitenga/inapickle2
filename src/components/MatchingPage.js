@@ -73,12 +73,12 @@ function MatchingPage() {
         <div>
             {found ? <MatchedPage /> : <div className="MatchingPage">
                 {restaurants.length > 0 ? <div><div className="card">
-                    <h3>{restaurants[index].name}</h3>
-                    <img src={restaurants[index].img} />
-                    <h5>Distance: {restaurants[index].distance} miles</h5>
+                    <h3 style={{textAlign: "center"}}>{restaurants[index].name}</h3>
+                    <img style={{width: "80vw", height: "45vh" ,marginLeft: "10vw"}} src={restaurants[index].img} />
+                    <h5 style={{textAlign: "center"}}>Distance: {restaurants[index].distance} miles</h5>
                 </div>
-                    <button onClick={() => handleDislike()}>Dislike</button>
-                    <button onClick={() => handleLike()}>Like</button>
+                    <button style={{width: "35vw", marginLeft: "10vw", marginRight: "10vw"}} onClick={() => handleDislike()}>Dislike</button>
+                    <button style={{width: "35vw"}} onClick={() => handleLike()}>Like</button>
                 </div> :
                     <div>Loading...</div>}
             </div>}
