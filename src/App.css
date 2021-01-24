@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: center;
 
-    margin:15px;
+    margin: 15px;
 }
 
 .HomePage, .RoomPage {
@@ -27,7 +27,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FFB7C3;
+  background-color: #718756;
   color: white;
   font-family: Montserrat;
   font-size: 28px;
@@ -70,7 +70,7 @@ a {
   top: 233px;
   margin-bottom: 1vw;
   background-color: #9EC072;
-  border-radius: 25px;
+  border-radius: 10px;
 }
 #range {
   background-color: grey
