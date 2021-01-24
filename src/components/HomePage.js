@@ -7,11 +7,9 @@ import {
   Link,
   useParams
 } from "react-router-dom";
+import axios from 'axios';
 
 function HomePage() {
-  const [roomCode, setRoomCode] = useState("");
-  const [name, setName] = useState("");
-
   const getRoom = () => {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -22,12 +20,30 @@ function HomePage() {
     return result;
   }
 
+  const [roomCode, setRoomCode] = useState("");
+  const [name, setName] = useState("");
+  const [creatorCode, setCreatorCode] = useState(getRoom());
+  
+
   const handleRoomInput = (e) => {
     setRoomCode(e.target.value.toUpperCase())
   }
 
   const handleNameInput = (e) => {
     setName(e.target.value);
+  }
+
+  const createRoom = () => {
+    axios.post("https://radiant-savannah-04373.herokuapp.com/roomcreator", {
+      roomCode: creatorCode,
+      creator: name
+    })
+    .then(function(response) {
+      console.log(response);
+    })
+    .catch(function(error) {
+      console.log(error);
+    })
   }
 
   return (
@@ -42,7 +58,7 @@ function HomePage() {
       </div>
 
       <div class="fpbutton">
-        <button><Link to={getRoom()}>Create Room</Link></button>
+        <button onClick={() => createRoom()}><Link to={creatorCode}>Create Room</Link></button>
       </div>
     </div>
   );
