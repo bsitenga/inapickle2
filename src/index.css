@@ -87,3 +87,14 @@ a {
   width: 190px;
   font-size: 18px;
 }
+
+.roomButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.testButton {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
