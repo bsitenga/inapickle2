@@ -1,4 +1,4 @@
-import '../App.css';
+import '../App.css'; //I don't know how to properly start this so LOOK OveR
 import {
     BrowserRouter as Router,
     Switch,

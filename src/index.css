@@ -57,6 +57,10 @@ input {
   border-radius: 25px;
 }
 
+#range {
+ color: grey;
+}
+
 #client1, #client2 {
   padding-top: 1vw;
   text-align: center;
