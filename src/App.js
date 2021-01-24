@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import HomePage from './components/HomePage';
 import RoomPage from './components/RoomPage';
 import MatchingPage from './components/MatchingPage';
+import MatchedPage from './components/MatchedPage'
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,6 +23,9 @@ function App() {
             </Route>
             <Route path="/:id/matching">
               <MatchingPage />
+            </Route>
+            <Route path="/:id/matched">
+              <MatchedPage />
             </Route>
             <Route path="/:id" children={<RoomPage />} />
           </Switch>
