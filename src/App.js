@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import HomePage from './components/HomePage';
 import RoomPage from './components/RoomPage';
+import MatchingPage from './components/MatchingPage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,6 +19,9 @@ function App() {
           <Switch>
             <Route exact path ="/">
               <HomePage />
+            </Route>
+            <Route path="/:id/matching">
+              <MatchingPage />
             </Route>
             <Route path="/:id" children={<RoomPage />} />
           </Switch>

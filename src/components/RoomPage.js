@@ -13,6 +13,8 @@ function RoomPage() {
     let { id } = useParams();
     const [creatorName, setCreatorName] = useState("Joining...");
     const [joinerName, setJoinerName] = useState("Waiting for a friend...");
+    const [lat, setLat] = useState(0);
+    const [long, setLong] = useState(0);
 
     useEffect(() => {
         try {
@@ -63,7 +65,10 @@ function RoomPage() {
                     })
                 }
                 data.sort(function (a, b) { return a.distance - b.distance });
-                console.log(data);
+                axios.post('http://localhost:5000/restaurants', {
+                    roomCode: id,
+                    restaurants: data
+                })
             })
 
             .catch(error => {
@@ -77,8 +82,8 @@ function RoomPage() {
         function success(position) {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
-            console.log(latitude);
-            console.log(longitude);
+            setLat(latitude);
+            setLong(longitude);
         }
 
         function error() {
@@ -103,7 +108,7 @@ function RoomPage() {
                     <div id="client1">{creatorName}</div>
                 </div>
                 <div class="clientNameFrame">
-    <div id="client2">{joinerName}</div>
+                    <div id="client2">{joinerName}</div>
                 </div>
             </div>
             <div class="moneySlider">
@@ -122,12 +127,12 @@ function RoomPage() {
             </div>
 
             <div>
-              <div class="fpbutton">
-                <button onClick={() => findLoc()}>Find Me</button>
-              </div>
-              <div class="fpbutton">
-                <button onClick={() => getRestaurants(37.786882, -122.399972, [1, 2], "restaurant")}>Start Matching</button>
-              </div>
+                <div class="fpbutton">
+                    <button onClick={() => findLoc()}>Find Me</button>
+                </div>
+                <div class="fpbutton">
+                    <button onClick={() => getRestaurants(lat, long, [1, 2, 3], "restaurant")}><Link to={id + "/matching"}>Start Matching</Link></button>
+                </div>
             </div>
 
         </div>
