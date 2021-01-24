@@ -1,0 +1,19 @@
+.fpbutton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin:15px;
+}
+
+.HomePage, .RoomPage {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.moneySlider {
+    margin: 15px;
+}

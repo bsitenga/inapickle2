@@ -10,6 +10,7 @@ import {
 
 function HomePage() {
   const [roomCode, setRoomCode] = useState("");
+  const [name, setName] = useState("");
 
   const getRoom = () => {
     var result = '';
@@ -25,13 +26,21 @@ function HomePage() {
     setRoomCode(e.target.value.toUpperCase())
   }
 
+  const handleNameInput = (e) => {
+    setName(e.target.value);
+  }
+
   return (
     <div className="HomePage">
-      In a pickle
-      <div><button><Link to={getRoom()}>Create Room</Link></button></div>
-      <div>
+      <h1>In a Pickle</h1>
+      <input placeholder="Name" type="text" maxLength="20" onChange={handleNameInput} ></input>
+      <div class="fpbutton">
+        <button><Link to={getRoom()}>Create Room</Link></button>
+      </div>
+
+      <div class="fpbutton">
         <input placeholder="Enter Room Code" type="text" value={roomCode} maxLength="4" onChange={handleRoomInput} ></input>
-        <button><Link to={roomCode}>Join Room</Link></button>
+        <button id="searchbutton"><Link to={roomCode}>Join Room</Link></button>
       </div>
     </div>
   );
