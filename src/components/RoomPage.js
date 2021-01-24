@@ -20,7 +20,7 @@ function RoomPage() {
                 axios.get("https://radiant-savannah-04373.herokuapp.com/rooms", {
                     params: { roomCode: id }
                 })
-                    .then(function(response) {
+                    .then(function (response) {
                         console.log(response);
                         setCreatorName(response.data)
                     })
@@ -92,17 +92,26 @@ function RoomPage() {
                 <span class="code"></span>
             </div>
             <div class="nameBox">
-                <div class="nameFrame">
-                    <div id="client1">{creatorName}</div>
+                <div class="clientNameFrame">
+                    <div id="client1">Heinz Doofenshmirtz</div>
                 </div>
-                <div class="nameFrame">
-                    <div id="client2">{joinerName}</div>
+                <div class="clientNameFrame">
+                    <div id="client2">Perry T. Platypus</div>
                 </div>
             </div>
             <div class="moneySlider">
-                $
-                <input type="range" min="1" max="10" value="50" class="slider" id="range"></input>
-                $$$$$
+                <div class="checkboxes">
+                    $
+                    <input type="checkbox"></input>
+                    $$
+                    <input type="checkbox"></input>
+                </div>
+                <div class="checkboxes">
+                    $$$
+                    <input type="checkbox"></input>
+                    $$$$
+                    <input type="checkbox"></input>
+                </div>
             </div>
 
             <div class="roomButtons">
@@ -114,4 +123,5 @@ function RoomPage() {
         </div>
     );
 }
+
 export default RoomPage;
