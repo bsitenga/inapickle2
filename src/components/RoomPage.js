@@ -13,7 +13,7 @@ function RoomPage() {
 
     const getRestaurants = (latitude, longitude, price, cat) => {
 
-        let budget = ""; 
+        let budget = "";
         for(let x = 0; x < price.length; x++) {
             budget.concat(price[x]);
         }
@@ -42,24 +42,24 @@ function RoomPage() {
           });
 
         }
-    
+
         function findLoc() {
-            
+
             function success(position) {
               const latitude  = position.coords.latitude;
               const longitude = position.coords.longitude;
               console.log(latitude);
               console.log(longitude);
             }
-          
+
             function error() {
             }
-          
+
             if(!navigator.geolocation) {
             } else {
               navigator.geolocation.getCurrentPosition(success, error);
             }
-          
+
           }
 
     return (
@@ -70,10 +70,10 @@ function RoomPage() {
                 <span class="code"></span>
             </div>
             <div class="nameBox">
-                <div class="nameFrame">
+                <div class="clientNameFrame">
                   <div id="client1">Heinz Doofenshmirtz</div>
                 </div>
-                <div class="nameFrame">
+                <div class="clientNameFrame">
                   <div id="client2">Perry T. Platypus</div>
                 </div>
             </div>
