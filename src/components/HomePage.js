@@ -34,6 +34,7 @@ function HomePage() {
   }
 
   const createRoom = () => {
+    localStorage.setItem('userType', 'creator');
     axios.post("https://radiant-savannah-04373.herokuapp.com/roomcreator", {
       roomCode: creatorCode,
       creator: name
@@ -47,7 +48,7 @@ function HomePage() {
   }
 
   const joinRoom = () => {
-    console.log("test");
+    localStorage.setItem('userType', 'joiner')
     axios.post("https://radiant-savannah-04373.herokuapp.com/roomjoiner", {
       roomCode: roomCode,
       joiner: name

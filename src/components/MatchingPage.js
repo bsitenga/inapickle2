@@ -43,7 +43,7 @@ function MatchingPage() {
         axios.post("https://radiant-savannah-04373.herokuapp.com/preferences", {
             roomCode: id,
             restaurantName: restaurants[index].name,
-            userType: "creator"
+            userType: localStorage.getItem("userType")
         })
             .then(function (response) {
                 console.log(response);
