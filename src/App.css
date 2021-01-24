@@ -65,6 +65,7 @@ a {
   border-bottom-left-radius: 10px;
   font-size: 18px;
   text-indent: 10px;
+  margin-right: -10%;
 }
 
 .clientNameFrame {
@@ -94,8 +95,8 @@ a {
 
 .enterName {
   border: none;
-  margin-top: 100px;
-  margin-bottom: 150px;
+  margin-top: 120px;
+  margin-bottom: 50px;
   border-radius: 25px;
   text-align: center;
   color: black;
