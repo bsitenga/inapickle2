@@ -64,7 +64,7 @@ function RoomPage() {
                     })
                 }
                 data.sort(function (a, b) { return a.distance - b.distance });
-                axios.post('http://localhost:5000/restaurants', {
+                axios.post('https://radiant-savannah-04373.herokuapp.com/restaurants', {
                     roomCode: id,
                     restaurants: data
                 })
