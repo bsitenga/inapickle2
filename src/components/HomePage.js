@@ -32,15 +32,17 @@ function HomePage() {
 
   return (
     <div className="HomePage">
-      <h1>In a Pickle</h1>
-      <input placeholder="Name" type="text" maxLength="20" onChange={handleNameInput} ></input>
+      <h1 id="title">In a Pickle</h1>
+      <img src="pickle_logo.png" alt="In a Pickle Logo"></img>
+      <input placeholder="Name" type="text" maxLength="20" onChange={handleNameInput} class="enterName" value={name}></input>
+
       <div class="fpbutton">
-        <button><Link to={getRoom()}>Create Room</Link></button>
+        <input placeholder="Enter Room Code" type="text" id="codeinput" value={roomCode} maxLength="4" onChange={handleRoomInput} ></input>
+        <button id="joinroombutton"><Link to={roomCode}>Join Room</Link></button>
       </div>
 
       <div class="fpbutton">
-        <input placeholder="Enter Room Code" type="text" value={roomCode} maxLength="4" onChange={handleRoomInput} ></input>
-        <button id="searchbutton"><Link to={roomCode}>Join Room</Link></button>
+        <button><Link to={getRoom()}>Create Room</Link></button>
       </div>
     </div>
   );
